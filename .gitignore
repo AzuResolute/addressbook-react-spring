@@ -33,3 +33,5 @@ build/
 ### Front End ###
 node_modules
 secrets.js
+bundle.js
+bundle.js.map
