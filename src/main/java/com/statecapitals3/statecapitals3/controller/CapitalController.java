@@ -50,6 +50,4 @@ public class CapitalController {
         Iterable<Capital> filteredCapitals = capitalService.getCapitalWithAreaLimit(doubleLimit);
         return new ResponseEntity<Iterable<Capital>>(filteredCapitals, HttpStatus.OK);
     }
-
-
 }
