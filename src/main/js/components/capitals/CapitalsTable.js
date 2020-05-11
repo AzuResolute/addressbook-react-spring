@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import axios from 'axios'
 import CapitalRow from './CapitalRow'
+import CapitalParameters from './CapitalParameters'
 
 export default class CapitalsTable extends Component {
 
@@ -8,26 +9,31 @@ export default class CapitalsTable extends Component {
         super(props)
     
         this.state = {
-            capitals: []
+            capitals: [],
+            category: "",
+            limitAmount: 0
         }
     }
     
 
     render() {
         return (
-            <table className="w-100 blue-table">
-                <thead>
-                    <tr>
-                        <th>State</th>
-                        <th>Capital</th>
-                        <th>Population</th>
-                        <th>Square Mileage</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.renderEachCapital(this.state.capitals)}
-                </tbody>
-            </table>
+            <Fragment>
+                <CapitalParameters/>
+                <table className="w-100 blue-table">
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Capital</th>
+                            <th>Population</th>
+                            <th>Square Mileage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.renderEachCapital(this.state.capitals)}
+                    </tbody>
+                </table>
+            </Fragment>
         )
     }
 
@@ -45,15 +51,14 @@ export default class CapitalsTable extends Component {
     }
 
     selectLoadCategory = () => {
-        const {category, value} = this.props.match.params
-        console.log(category)
+        const {category, limitAmount} = this.state
         let apiRoute = ""
         switch(category) {
             case "population":
-                apiRoute = `/api/capitals/limit/population/${value}`;
+                apiRoute = `/api/capitals/limit/population/${limitAmount}`;
                 break;
             case "squareMiles":
-                apiRoute = `/api/capitals/limit/squareMiles/${value}`;
+                apiRoute = `/api/capitals/limit/squareMiles/${limitAmount}`;
                 break;
             default:
                 apiRoute = "/api/capitals/";
@@ -66,4 +71,10 @@ export default class CapitalsTable extends Component {
         const {data} = await axios.get(apiRoute)
         this.setState({capitals: data})
     }
+
+    handleChange = async e => {
+        await this.setState({
+          [e.target.name]: e.target.value
+        })
+      }
 }

@@ -10,7 +10,6 @@ class Routes extends Component {
 
     return (
         <Switch>
-            <Route path="/capitals/:category/:value" component={CapitalsTable} />
             <Route path="/capitals/" component={CapitalsTable} />
             <Route path="/" component={Welcome} />
         </Switch>
