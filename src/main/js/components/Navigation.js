@@ -8,7 +8,7 @@ export default class Navigation extends Component {
             <Navbar.Brand href="#home">CapitalsApp</Navbar.Brand>
             <Nav className="mr-auto d-flex justify-content-around">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/capitals/">Display Capitals</Nav.Link>
+              <Nav.Link href="/capitals">Display Database</Nav.Link>
             </Nav>
           </Navbar>
         )

@@ -1,4 +1,4 @@
-package com.statecapitals3.statecapitals3;
+package com.addressBook.addressBook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

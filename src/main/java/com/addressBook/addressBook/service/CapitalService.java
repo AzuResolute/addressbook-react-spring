@@ -1,7 +1,7 @@
-package com.statecapitals3.statecapitals3.service;
+package com.addressBook.addressBook.service;
 
-import com.statecapitals3.statecapitals3.model.Capital;
-import com.statecapitals3.statecapitals3.repository.CapitalRepository;
+import com.addressBook.addressBook.model.Capital;
+import com.addressBook.addressBook.repository.CapitalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -49,11 +49,7 @@ public class CapitalService {
         String fileName = "MoreStateCapitals.txt";
         long count = 0;
         try {
-
-            Scanner scanner = new Scanner(
-                new BufferedReader(new FileReader(fileName))
-            );
-
+            Scanner scanner = new Scanner(new BufferedReader(new FileReader(fileName)));
             while(scanner.hasNextLine()) {
                 Capital capital = getCapitalFromTextLine(scanner.nextLine());
                 saveOrUpdateCapital(capital);

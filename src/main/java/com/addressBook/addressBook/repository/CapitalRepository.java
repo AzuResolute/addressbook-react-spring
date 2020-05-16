@@ -1,6 +1,6 @@
-package com.statecapitals3.statecapitals3.repository;
+package com.addressBook.addressBook.repository;
 
-import com.statecapitals3.statecapitals3.model.Capital;
+import com.addressBook.addressBook.model.Capital;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

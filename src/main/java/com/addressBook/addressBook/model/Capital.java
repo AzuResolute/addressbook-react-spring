@@ -1,4 +1,4 @@
-package com.statecapitals3.statecapitals3.model;
+package com.addressBook.addressBook.model;
 
 import javax.persistence.*;
 import java.util.Date;

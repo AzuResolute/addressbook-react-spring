@@ -1,4 +1,4 @@
-package com.statecapitals3.statecapitals3.controller;
+package com.addressBook.addressBook.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

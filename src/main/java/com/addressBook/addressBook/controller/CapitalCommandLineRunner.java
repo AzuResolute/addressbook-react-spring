@@ -1,6 +1,6 @@
-package com.statecapitals3.statecapitals3.controller;
+package com.addressBook.addressBook.controller;
 
-import com.statecapitals3.statecapitals3.service.CapitalService;
+import com.addressBook.addressBook.service.CapitalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

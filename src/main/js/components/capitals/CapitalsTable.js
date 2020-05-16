@@ -20,7 +20,7 @@ export default class CapitalsTable extends Component {
         return (
             <Fragment>
                 <CapitalParameters/>
-                <table className="w-100 blue-table">
+                <table className="w-100">
                     <thead>
                         <tr>
                             <th>State</th>
@@ -72,9 +72,9 @@ export default class CapitalsTable extends Component {
         this.setState({capitals: data})
     }
 
-    handleChange = async e => {
-        await this.setState({
-          [e.target.name]: e.target.value
-        })
-      }
+    // handleChange = async e => {
+    //     await this.setState({
+    //       [e.target.name]: e.target.value
+    //     })
+    //   }
 }

@@ -13,7 +13,7 @@ class App extends Component {
 		return (
 			<div className="text-center">
 				<Navigation/>
-				<h1>Welcome to the StateCapitals Application</h1>
+				<h1>Welcome to the StateCapitals Application Hi</h1>
 				<Routes/>
 			</div>
 		)

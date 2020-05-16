@@ -8,8 +8,8 @@
 		<version>2.2.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.statecapitals3</groupId>
-	<artifactId>statecapitals3</artifactId>
+	<groupId>com.addressBook</groupId>
+	<artifactId>addressBook</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>statecapitals3</name>
 	<description>State Capitals 3 Assignment using Spring</description>
