@@ -5,10 +5,9 @@ export default class Navigation extends Component {
     render() {
         return (
         <Navbar bg="primary" variant="dark">
-            <Navbar.Brand href="#home">CapitalsApp</Navbar.Brand>
+            <Navbar.Brand href="#home">AddressBook</Navbar.Brand>
             <Nav className="mr-auto d-flex justify-content-around">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/capitals">Display Database</Nav.Link>
             </Nav>
           </Navbar>
         )

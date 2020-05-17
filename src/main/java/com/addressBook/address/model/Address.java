@@ -18,6 +18,8 @@ public class Address {
     private String state;
     private int zip;
 
+    public Address() {}
+
     public Address(String firstName, String lastName, String streetAddress, String city, String state, int zip) {
         this.firstName = firstName;
         this.lastName = lastName;

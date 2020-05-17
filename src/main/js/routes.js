@@ -1,7 +1,6 @@
 
 import React, {Component} from 'react'
 import {withRouter, Route, Switch} from 'react-router-dom'
-import CapitalsTable from './components/capitals/CapitalsTable'
 import Welcome from './components/Welcome'
 
 class Routes extends Component {
@@ -10,7 +9,6 @@ class Routes extends Component {
 
     return (
         <Switch>
-            <Route path="/capitals" component={CapitalsTable} />
             <Route path="/" component={Welcome} />
         </Switch>
     )

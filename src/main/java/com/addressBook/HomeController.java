@@ -1,4 +1,4 @@
-package com.addressBook.main;
+package com.addressBook;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

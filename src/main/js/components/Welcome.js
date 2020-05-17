@@ -15,13 +15,13 @@ export default class Welcome extends Component {
     render() {
         return (
             <div>
-                <h3>Current Capitals loaded: {this.state.size}</h3>
+                <h3>Current Addresses loaded: {this.state.size}</h3>
             </div>
         )
     }
 
     componentDidMount = async () => {
-        const {data} = await axios.get("/api/capitals/size")
+        const {data} = await axios.get("/api/addressbook/size")
         this.setState({size: data})
     }
 }
