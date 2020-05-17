@@ -1,7 +1,7 @@
-package com.addressBook.addressBook.controller;
+package com.addressBook.example.controller;
 
-import com.addressBook.addressBook.model.Capital;
-import com.addressBook.addressBook.service.CapitalService;
+import com.addressBook.example.model.Capital;
+import com.addressBook.example.service.CapitalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

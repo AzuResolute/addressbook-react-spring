@@ -1,0 +1,105 @@
+# AddressBook Plan v1
+##### Legend ######
+> package
++ public
+- private
+: implements
+-> extends
+(g/s) getter/setter
+* static
+
+>com.sq.Package
+    +App.Java
+        +*main(string[] args) : void
+>com.addressbook.model
+    +Address.java (noun)
+        +id : long (g)
+        +firstName : String (g/s)
+        +lastName : String (g/s)
+        +streetAddress : String (g/s)
+        +city : String (g/s)
+        +state : String (g/s)
+        +zip : String (g/s)
+        -toString() (override) : String
+>com.addressbook.service
+    +AddressServiceImpl.java : AddressService
+        -addressBook : List<Address> (g)
+        +getAddress(long id) : return Address
+        +addAddress(Address address) : return int
+        +updateAddress(Address address) : return int
+        +deleteAddress(long id) : void
+        +getAddressBook() : return List<Address>
+        +size() : return int
+        +save() : void
+        +read() : void
+    +AddressService.java (interface)
+        +getAddress(long id) : return Address
+        +addAddress(Address address) : return int
+        +updateAddress(Address address) : return int
+        +deleteAddress(long id) : void
+        +getAddressBook() : return List<Address>
+        +size() : return int
+        +save() : void
+        +read() : void
+>com.addressbook.view
+    +ViewImpl.java : View
+        -ui : UserIO
+        +landingPage()
+        +menuPage() : return int // used by addressBookRoutes
+        +promptAddressDetails(String message) : return Address // used by addAddress, updateAddress
+        +promptLongId(String message) : return long // used by getAddress, deleteAddress
+        +displayAddress() : void
+        +displayAddressBook() : void
+        +displaySuccess() : void
+        +displayError() : void
+
+    +View.java (interface)
+        +landingPage()
+        +menuPage() : return int
+        +promptAddressDetails(String message) : return Address
+        +promptLongId(String message) : return long
+        +displayAddress() : void
+        +displayAddressBook() : void
+        +displaySuccess() : void
+        +displayError() : void
+>com.addressbook.controller
+    +AddressControllerImpl.java : AddressController
+        -view : View
+        -addressService : AddressService
+        -isRunning : boolean
+        -addressBookRoutes() : void
+
+        +execute() : void
+        +stop() : void
+    +AddressController.java
+        -view : View
+        -addressService : AddressService
+        -isRunning : boolean
+        -addressBookRoutes() : void
+        +execute() : void
+        +stop() : void
+>com.userio
+    +TestingUserIO.Java
+        +*main(string[] args) : void
+    +UserIOImpl.java : UserIO.java
+        +print(String message) : return void
+        +readString(String prompt) : return String
+        +readInt(String prompt) : return int
+        +readInt(String prompt, int min, int max) : return int
+        +readDouble(String prompt) : return double
+        readDouble(String prompt, double min, double max) : return double
+        readFloat(String prompt) : return float
+        readFloat(String prompt, float min, float max) : return float
+        readLong(String prompt) : return long
+        readLong(String prompt, long min, long max) : return long
+    +UserIO.java (interface)
+        +print(String message) : return void
+        +readString(String prompt) : return String
+        +readInt(String prompt) : return int
+        +readInt(String prompt, int min, int max) : return int
+        +readDouble(String prompt) : return double
+        readDouble(String prompt, double min, double max) : return double
+        readFloat(String prompt) : return float
+        readFloat(String prompt, float min, float max) : return float
+        readLong(String prompt) : return long
+        readLong(String prompt, long min, long max) : return long

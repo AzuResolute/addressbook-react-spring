@@ -11,8 +11,8 @@
 	<groupId>com.addressBook</groupId>
 	<artifactId>addressBook</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>statecapitals3</name>
-	<description>State Capitals 3 Assignment using Spring</description>
+	<name>addressBook</name>
+	<description>Address Book Assignment using Spring</description>
 
 	<properties>
 		<java.version>11</java.version>

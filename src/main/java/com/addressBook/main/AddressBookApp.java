@@ -1,13 +1,13 @@
-package com.addressBook.addressBook;
+package com.addressBook.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StateCapitalsApp {
+public class AddressBookApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StateCapitalsApp.class, args);
+		SpringApplication.run(AddressBookApp.class, args);
 
 		/**
 		 * To run, please maven install, then spring-boot run

@@ -1,7 +1,7 @@
-package com.addressBook.addressBook.service;
+package com.addressBook.example.service;
 
-import com.addressBook.addressBook.model.Capital;
-import com.addressBook.addressBook.repository.CapitalRepository;
+import com.addressBook.example.model.Capital;
+import com.addressBook.example.dao.CapitalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
