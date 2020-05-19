@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AddressServiceExam {
+public class AddressServiceTests {
 
     @Autowired
     private AddressService service;
@@ -38,14 +38,19 @@ public class AddressServiceExam {
         Arrays.stream(addressBook).forEach(address -> service.addOrSaveAddress(address));
     }
 
+    @AfterEach
+    public void tearDown() {
+        addressBook.deleteAll();
+    }
+
     @Test
-    public void getAllAddresses() {
+    public void getAllAddressesAndSizeTest() {
         int numOfAddresses = service.size();
         assertEquals(3, numOfAddresses, "It seems to pick up the autowired repo");
     }
 
     @Test
-    public void getSingleAddress() {
+    public void getSingleAndCreateAddressTest() {
         Address newNeighbor = new Address("Hope", "Averuncus", "321 Lilith Path", "Park Lane", "OM", 54321);
 
         service.addOrSaveAddress(newNeighbor);
@@ -55,4 +60,18 @@ public class AddressServiceExam {
         assertEquals(newNeighbor.getFirstName(), retrievedAddress.getFirstName(), "First name is the same");
         assertEquals(newNeighbor.getLastName(), retrievedAddress.getLastName(), "Last name the same");
     }
+
+    @Test
+    public void deleteAddressTest() {
+        Address newNeighbor = new Address("Love", "Averuncus", "987 Lilith Path", "Park Lane", "OM", 54321);
+
+        service.addOrSaveAddress(newNeighbor);
+        Address retrievedAddress = service.getAddress(newNeighbor.getId()).get();
+        service.deleteAddress(retrievedAddress.getId());
+        boolean isTheDeletedAddressFound = service.getAddress(newNeighbor.getId()).isPresent();
+
+        assertFalse(isTheDeletedAddressFound, "It should be gone now");
+    }
+
+
 }
