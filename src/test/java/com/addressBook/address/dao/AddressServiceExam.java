@@ -6,6 +6,7 @@ import org.junit.jupiter.api.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
@@ -15,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Because I am currently running on Spring, testing here is a bit different - Will research on this more
  */
+@ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class AddressServiceExam {
@@ -34,13 +36,12 @@ public class AddressServiceExam {
         };
 
         Arrays.stream(addressBook).forEach(address -> service.addOrSaveAddress(address));
-
     }
 
     @Test
     public void getAllAddresses() {
         int numOfAddresses = service.size();
-        assertEquals(5, numOfAddresses, "It seems to pick up the autowired repo");
+        assertEquals(3, numOfAddresses, "It seems to pick up the autowired repo");
     }
 
     @Test
