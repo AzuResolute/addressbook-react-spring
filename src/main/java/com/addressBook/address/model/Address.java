@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class Address {
@@ -96,5 +97,46 @@ public class Address {
 
     public void setZip(int zip) {
         this.zip = zip;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) {
+            return true;
+        }
+        if(this == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+
+        final Address other = (Address) obj;
+
+        if(!Objects.equals(this.firstName, other.firstName)) {
+            return false;
+        }
+        if(!Objects.equals(this.lastName, other.lastName)) {
+            return false;
+        }
+        if(!Objects.equals(this.streetAddress, other.streetAddress)) {
+            return false;
+        }
+        if(!Objects.equals(this.city, other.city)) {
+            return false;
+        }
+        if(!Objects.equals(this.state, other.state)) {
+            return false;
+        }
+        if(!Objects.equals(this.zip, other.zip)) {
+            return false;
+        }
+
+        return true;
     }
 }
