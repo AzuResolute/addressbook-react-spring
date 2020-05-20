@@ -3,11 +3,9 @@ package com.addressBook.address.dao;
 import com.addressBook.address.model.Address;
 import com.addressBook.address.service.AddressService;
 import org.junit.jupiter.api.*;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 
@@ -17,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * Because I am currently running on Spring, testing here is a bit different - Will research on this more
  */
 @ActiveProfiles("test")
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class AddressServiceTests {
 
